@@ -13,14 +13,26 @@ import javax.swing.JComponent;
 
 public class BoxComponent extends JComponent {
 	private Shape rectangle;
+	private int x = 100;
+	private int y = 100;
 	
-	public BoxComponent() {
+	public BoxComponent(int x, int y, int width, int height) {
 		super();
-		rectangle = new Rectangle2D.Double(100, 100, 50, 50);
+		rectangle = new Rectangle2D.Double(x, y, width, height);
 		repaint();
-		
-		
-		
+	}
+	
+	public void moveBox(int x, int y, int width, int height) {
+		rectangle = new Rectangle2D.Double(x, y, width, height);
+		this.x = x;
+		this.y = y;
+		repaint();
+	}
+	public int getX() {
+		return x;
+	}
+	public int getY() {
+		return y;
 	}
 	
 	public void paintComponent(Graphics g) {
