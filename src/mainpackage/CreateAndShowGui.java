@@ -3,11 +3,50 @@ package mainpackage;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Container;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class CreateAndShowGui extends JFrame {
 	private BoxComponent thebox;
+	
+	
+	private class MoveKeys implements KeyListener{
+
+		@Override
+		public void keyTyped(KeyEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void keyPressed(KeyEvent e) {
+			int ID = e.getID();
+			if(ID == KeyEvent.VK_UP) {
+				//null for now
+			}
+			else if(ID == KeyEvent.VK_DOWN){
+				//null for now
+			}
+			else if(ID == KeyEvent.VK_LEFT) {
+				//null for now
+			}
+			else if (ID == KeyEvent.VK_RIGHT){
+				//null for now
+			}
+			
+		}
+
+		@Override
+		public void keyReleased(KeyEvent e) {
+			// TODO Auto-generated method stub
+			
+		}
+		
+	}
+	
 	
 	public CreateAndShowGui(String title) {
 		Container contpane = getContentPane();
@@ -16,6 +55,7 @@ public class CreateAndShowGui extends JFrame {
 		mainpanel.setLayout(new BorderLayout());
 		thebox = new BoxComponent();
 		mainpanel.add(thebox, BorderLayout.CENTER);
+		thebox.setFocusable(true);
 		contpane.add(mainpanel);
 		
 		this.setTitle(title);
