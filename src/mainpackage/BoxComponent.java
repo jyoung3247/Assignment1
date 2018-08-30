@@ -15,19 +15,39 @@ public class BoxComponent extends JComponent {
 	private Shape rectangle;
 	private int x = 100;
 	private int y = 100;
+	private int step = 2;
+	private int diameter = 25;
 	
-	public BoxComponent(int x, int y, int width, int height) {
+	
+	public BoxComponent() {
 		super();
-		rectangle = new Rectangle2D.Double(x, y, width, height);
+		rectangle = new Rectangle2D.Double(x, y, diameter, diameter);
 		repaint();
 	}
 	
-	public void moveBox(int x, int y, int width, int height) {
-		rectangle = new Rectangle2D.Double(x, y, width, height);
-		this.x = x;
-		this.y = y;
+	//Methods to move the box
+	public void MoveBoxUp() {
+		this.y = y - step;
+		rectangle = new Rectangle2D.Double(x, y, diameter, diameter);
 		repaint();
 	}
+	public void MoveBoxDown() {
+		this.y = y + step;
+		rectangle = new Rectangle2D.Double(x, y, diameter, diameter);
+		repaint();
+	}
+	public void MoveBoxLeft() {
+		this.x = x - step;
+		rectangle = new Rectangle2D.Double(x, y, diameter, diameter);
+		repaint();
+	}
+	public void MoveBoxRight() {
+		this.x = x + step;
+		rectangle = new Rectangle2D.Double(x, y, diameter, diameter);
+		repaint();
+	}
+	
+	//Get current location of box
 	public int getX() {
 		return x;
 	}
