@@ -24,9 +24,6 @@ public class CreateAndShowGui extends JFrame {
 		@Override
 		public void keyPressed(KeyEvent e) {
 			int ID = e.getKeyCode();
-			int currentx = thebox.getX();
-			int currenty = thebox.getY();
-			
 			if(ID == KeyEvent.VK_UP) {
 				thebox.MoveBoxUp();
 			}

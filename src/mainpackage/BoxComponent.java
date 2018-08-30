@@ -47,14 +47,6 @@ public class BoxComponent extends JComponent {
 		repaint();
 	}
 	
-	//Get current location of box
-	public int getX() {
-		return x;
-	}
-	public int getY() {
-		return y;
-	}
-	
 	public void paintComponent(Graphics g) {
 		Graphics2D g2d = (Graphics2D)g;
 		g2d.setColor(Color.GREEN);
