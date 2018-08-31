@@ -11,6 +11,7 @@ import javax.swing.JPanel;
 
 public class CreateAndShowGui extends JFrame {
 	private BoxComponent thebox;
+	private JPanel mainpanel;
 
 	
 	private class MoveKeys implements KeyListener{
@@ -24,17 +25,20 @@ public class CreateAndShowGui extends JFrame {
 		@Override
 		public void keyPressed(KeyEvent e) {
 			int ID = e.getKeyCode();
+			int frameheight = mainpanel.getHeight();
+			int framewidth = mainpanel.getWidth();
+			
 			if(ID == KeyEvent.VK_UP) {
 				thebox.MoveBoxUp();
 			}
-			else if(ID == KeyEvent.VK_DOWN){
-				thebox.MoveBoxDown();
+			if(ID == KeyEvent.VK_DOWN){
+				thebox.MoveBoxDown(frameheight);
 			}
-			else if(ID == KeyEvent.VK_LEFT) {
+			if(ID == KeyEvent.VK_LEFT) {
 				thebox.MoveBoxLeft();
 			}
-			else if (ID == KeyEvent.VK_RIGHT){
-				thebox.MoveBoxRight();
+			if (ID == KeyEvent.VK_RIGHT){
+				thebox.MoveBoxRight(framewidth);
 			}
 			
 		}
@@ -50,7 +54,7 @@ public class CreateAndShowGui extends JFrame {
 	
 	public CreateAndShowGui(String title) {
 		Container contpane = getContentPane();
-		JPanel mainpanel = new JPanel();
+		mainpanel = new JPanel();
 		mainpanel.setBackground(Color.BLACK);
 		mainpanel.setLayout(new BorderLayout());
 		thebox = new BoxComponent();
