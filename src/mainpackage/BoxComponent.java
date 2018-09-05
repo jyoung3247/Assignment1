@@ -49,7 +49,7 @@ public class BoxComponent extends JComponent {
 	}
 	public void MoveBoxLeft() {
 		if(x - step < 0) {
-			this.x = x;
+			this.x = 0;
 		}
 		else{
 			this.x = x - step;
